@@ -69,7 +69,7 @@ namespace AnimationParser
                 {
                     for (int i = 1; i < ents.Length; i++)
                     {
-                        stringToInsert += $"\nanimation__{animationNum}=\"delay:{_timeStep * i}; autoplay: true; dur: {_timeStep}; property: {item.Key}; from: {ents[i-1].Properties[item.Key]}; to: {ents[i].Properties[item.Key]}; easing: linear;\"";
+                        stringToInsert += $"\nanimation__{animationNum}=\"autoplay: false; dur: {_timeStep}; property: {item.Key}; from: {ents[i-1].Properties[item.Key]}; to: {ents[i].Properties[item.Key]}; easing: linear;\"";
                         animationNum++;
                     }
                     

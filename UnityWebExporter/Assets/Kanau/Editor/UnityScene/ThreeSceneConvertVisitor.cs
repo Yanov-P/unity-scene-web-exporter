@@ -354,7 +354,6 @@ namespace Assets.Kanau.UnityScene {
             var m = materialNode.Name;
 
             var buf = geometryNode as BufferGeometryElem;
-            buf.MaterialName = m;
 
             Debug.Assert(geometryNode != null);
             Debug.Assert(materialNode != null);
@@ -362,6 +361,7 @@ namespace Assets.Kanau.UnityScene {
             MeshElem meshNode;
             if (buf != null)
             {
+                buf.MaterialName = m;
                 meshNode = new MeshElem(n)
                 {
                     Geometry = buf,

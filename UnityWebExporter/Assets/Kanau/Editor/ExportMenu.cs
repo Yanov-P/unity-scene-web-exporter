@@ -109,7 +109,7 @@ namespace Assets.Kanau.Editor {
                 }
             }
 
-            for (float i = 0; i < clip.length; i += settings.animation.timeStep)
+            for (float i = 0; i <= clip.length; i += settings.animation.timeStep)
             {
                
                 var pathHelper = ExportPathHelper.Instance;
@@ -118,6 +118,7 @@ namespace Assets.Kanau.Editor {
 
                 anim.Play(clip.name);
                 anim[clip.name].time = i;
+                //Debug.Log("i " + i.ToString() + " settings.animation.timeStep " + settings.animation.timeStep + " clip.length " + clip.length.ToString() + " clip.name " + clip.name);
                 pathHelper.UpdateTargetFilePath(lastExportPath + '/' + i.ToString("0.#0") + ".html");
                 anim.Sample();
                 SceneView.RepaintAll();
